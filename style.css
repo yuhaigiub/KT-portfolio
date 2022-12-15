@@ -159,15 +159,15 @@ body {
 .container .imgBox:nth-child(4) .img {
 	--translate-x: calc(var(--radius) * var(--angle));
 	--translate-y: calc(var(--radius) * var(--angle));
-	background-color: blue;
-	border: 5px solid blue;
+	background-color: deeppink;
+	border: 5px solid deeppink;
 }
 
 .container .imgBox:nth-child(5) .img {
 	--translate-x: 0;
 	--translate-y: calc(var(--radius));
-	background-color: hotpink;
-	border: 5px solid hotpink;
+	background-color: lightsteelblue;
+	border: 5px solid lightsteelblue;
 }
 
 .container .imgBox:nth-child(6) .img {
@@ -180,15 +180,15 @@ body {
 .container .imgBox:nth-child(7) .img {
 	--translate-x: calc(var(--radius) * -1);
 	--translate-y: 0;
-	background-color: lightsteelblue;
-	border: 5px solid lightsteelblue;
+	background-color: magenta;
+	border: 5px solid magenta;
 }
 
 .container .imgBox:nth-child(8) .img {
 	--translate-x: calc(var(--radius) * var(--angle) * -1);
 	--translate-y: calc(var(--radius) * var(--angle) * -1);
-	background-color: magenta;
-	border: 5px solid magenta;
+	background-color: cyan;
+	border: 5px solid cyan;
 }
 
 @keyframes rotation {
