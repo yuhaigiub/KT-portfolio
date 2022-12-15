@@ -1,0 +1,205 @@
+:root {
+	--neutral-100: #0c0209;
+	--icon-size: 7rem;
+	--container: 40rem;
+	--diameter: 30rem;
+	--radius: calc(0.5 * var(--diameter));
+	--angle: 0.707;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	display: grid;
+	place-items: center;
+	font-family: sans-serif;
+	background-color: var(--neutral-100);
+}
+
+.container {
+	background-color: var(--neutral-100);
+	position: relative;
+	width: var(--container);
+	aspect-ratio: 1 / 1;
+	/* border: 2px dashed white; */
+	border-radius: 50%;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.icon {
+	position: absolute;
+	width: var(--diameter);
+	aspect-ratio: 1 / 1;
+	border: 2px dashed white;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	animation: rotation 300s linear infinite forwards;
+}
+
+.spinner {
+	position: absolute;
+	width: 60%;
+	height: 60%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--neutral-100);
+	border-radius: 50%;
+}
+
+.spinner::before {
+	position: absolute;
+	content: "";
+	width: 105%;
+	aspect-ratio: 1 / 1;
+	border-inline: 5px solid chartreuse;
+	border-block: 5px solid transparent;
+	border-radius: 50%;
+	animation: rotation 15s linear infinite forwards;
+	z-index: -1;
+}
+
+.spinner::after {
+	position: absolute;
+	content: "";
+	width: 120%;
+	aspect-ratio: 1 / 1;
+	border-inline: 5px solid white;
+	border-block: 5px solid transparent;
+	border-radius: 50%;
+	animation: rotation 8s linear infinite forwards;
+}
+
+.container .imgBox {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container .imgBox .img {
+	--translate-x: 0;
+	--translate-y: 0;
+	cursor: pointer;
+	position: absolute;
+	width: var(--icon-size);
+	aspect-ratio: 1/1;
+	/* background-color: green; */
+	border-radius: 50%;
+	transition: scale 500ms ease;
+	animation: starting-animation 2s cubic-bezier(1, 0, 0.62, 1.07) 1 forwards;
+	background-size: cover;
+	opacity: 0;
+	z-index: 100;
+	filter: grayscale(1);
+}
+
+@keyframes starting-animation {
+	0% {
+		opacity: 0;
+		transform: translate(0, 0);
+	}
+	1% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 1;
+		transform: translate(var(--translate-x), var(--translate-y));
+	}
+}
+
+.container .imgBox .img:hover {
+	scale: 1.05;
+}
+
+.container .imgBox:nth-child(1) .img {
+	--translate-x: 0;
+	--translate-y: calc(var(--radius) * -1);
+	background-color: red;
+	border: 5px solid red;
+}
+
+.container .imgBox:nth-child(2) .img {
+	--translate-x: calc(var(--radius) * var(--angle));
+	--translate-y: calc(var(--radius) * var(--angle) * -1);
+	background-color: yellow;
+	border: 5px solid yellow;
+}
+
+.container .imgBox:nth-child(3) .img {
+	--translate-x: calc(var(--radius));
+	--translate-y: 0;
+	background-color: green;
+	border: 5px solid green;
+}
+
+.container .imgBox:nth-child(4) .img {
+	--translate-x: calc(var(--radius) * var(--angle));
+	--translate-y: calc(var(--radius) * var(--angle));
+	background-color: blue;
+	border: 5px solid blue;
+}
+
+.container .imgBox:nth-child(5) .img {
+	--translate-x: 0;
+	--translate-y: calc(var(--radius));
+	background-color: hotpink;
+	border: 5px solid hotpink;
+}
+
+.container .imgBox:nth-child(6) .img {
+	--translate-x: calc(var(--radius) * var(--angle) * -1);
+	--translate-y: calc(var(--radius) * var(--angle));
+	background-color: teal;
+	border: 5px solid teal;
+}
+
+.container .imgBox:nth-child(7) .img {
+	--translate-x: calc(var(--radius) * -1);
+	--translate-y: 0;
+	background-color: lightsteelblue;
+	border: 5px solid lightsteelblue;
+}
+
+.container .imgBox:nth-child(8) .img {
+	--translate-x: calc(var(--radius) * var(--angle) * -1);
+	--translate-y: calc(var(--radius) * var(--angle) * -1);
+	background-color: magenta;
+	border: 5px solid magenta;
+}
+
+@keyframes rotation {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	50% {
+		transform: rotateZ(360deg);
+	}
+	100% {
+		transform: rotateZ(720deg);
+	}
+}
+
+.middle {
+	position: absolute;
+	width: 180px;
+	aspect-ratio: 1 / 1;
+	border-radius: 25%;
+	transition: background-image 500ms ease;
+	background-image: url("./images1/image1.jpg");
+	background-size: cover;
+}
