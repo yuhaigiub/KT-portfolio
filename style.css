@@ -230,7 +230,7 @@ body {
 @media screen and (max-width: 630px) {
 	:root {
 		--icon-size: 6rem;
-		--diameter: 90vw;
+		--diameter: 95vw;
 		--radius: calc(0.5 * var(--diameter) - 0.5 * var(--icon-size) - 5px - 0.35rem);
 		--large-color: magenta;
 	}
@@ -258,9 +258,9 @@ body {
 
 @media screen and (max-width: 550px) {
 	:root {
-		--diameter: 90vw;
+		--diameter: 95vw;
 		--icon-size: 5rem;
-		--scale-factor: 1;
+		--scale-factor: 1.05;
 	}
 
 	.container {
@@ -268,7 +268,7 @@ body {
 	}
 
 	.middle {
-		width: 8rem;
+		width: 8.5rem;
 	}
 
 	.spinner {
