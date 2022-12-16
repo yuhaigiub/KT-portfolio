@@ -229,7 +229,7 @@ body {
 
 @media screen and (max-width: 630px) {
 	:root {
-		--icon-size: 5rem;
+		--icon-size: 6rem;
 		--diameter: 90vw;
 		--radius: calc(0.5 * var(--diameter) - 0.5 * var(--icon-size) - 5px - 0.35rem);
 		--large-color: magenta;
@@ -259,7 +259,7 @@ body {
 @media screen and (max-width: 550px) {
 	:root {
 		--diameter: 90vw;
-		--icon-size: 4rem;
+		--icon-size: 5rem;
 		--scale-factor: 1;
 	}
 
