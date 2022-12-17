@@ -11,13 +11,32 @@ particlesJS.load('particles-js', 'particles.json', function() {
 
 /* Otherwise just put the config content (json): */
 
+// default
+let numberOfParticle = 80;
+let particleSize = 7;
+let particleOpacity = 0.8;
+let particleSpeed = 6;
+
+const screenWidth = screen.width;
+if (screenWidth < 630) {
+	numberOfParticle = 60;
+	particleSize = 4;
+	particleOpacity = 0.6;
+	particleSpeed = 3;
+} else if (screenWidth < 550) {
+	numberOfParticle = 50;
+	particleSize = 3;
+	particleOpacity = 0.5;
+	particleSpeed = 2;
+}
+
 particlesJS(
 	"particle",
 
 	{
 		particles: {
 			number: {
-				value: 80,
+				value: numberOfParticle,
 				density: {
 					enable: true,
 					value_area: 800,
@@ -42,7 +61,7 @@ particlesJS(
 				},
 			},
 			opacity: {
-				value: 0.8,
+				value: particleOpacity,
 				random: true,
 				anim: {
 					enable: true,
@@ -52,7 +71,7 @@ particlesJS(
 				},
 			},
 			size: {
-				value: 7,
+				value: particleSize,
 				random: true,
 				anim: {
 					enable: false,
@@ -70,7 +89,7 @@ particlesJS(
 			},
 			move: {
 				enable: true,
-				speed: 6,
+				speed: particleSpeed,
 				direction: "none",
 				random: true,
 				straight: false,
