@@ -20,17 +20,22 @@
 }
 
 body {
-	min-height: 100vh;
+	margin: 0;
+	font-family: sans-serif;
+}
+
+.outer-container {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin: 0;
-	font-family: sans-serif;
+	width: 100%;
+	min-height: 100vh;
 	background-color: var(--neutral-100);
+	position: relative;
 }
 
 .container {
-	background-color: var(--neutral-100);
+	background-color: transparent;
 	position: relative;
 	width: var(--container);
 	aspect-ratio: 1 / 1;
@@ -46,7 +51,7 @@ body {
 	position: absolute;
 	width: var(--diameter);
 	aspect-ratio: 1 / 1;
-	border: 2px dashed white;
+	border: 2px dashed gold;
 	border-radius: 50%;
 	display: flex;
 	justify-content: center;
@@ -282,4 +287,11 @@ body {
 	.spinner::before {
 		width: calc(100% - var(--icon-size));
 	}
+}
+
+#particle {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: inherit;
 }

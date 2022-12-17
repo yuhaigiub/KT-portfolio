@@ -47,3 +47,5 @@ let currentHighlight = 0;
 		});
 	});
 })();
+
+const introContainer = document.querySelector('.intro-container');
